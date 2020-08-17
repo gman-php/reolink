@@ -230,6 +230,7 @@ class ReolinkApi(object):
         param = {"cmd": "Logout", "token": self._token}
 
         await self.send(body, param)
+        self._token = None
 
     async def set_ftp(self, enabled):
         await self.get_settings()
